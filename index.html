@@ -1,97 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator</title>
-    
-    <!-- favicon  -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Password Generator</title>
 
-    <!-- font awesome cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<!-- favicon  -->
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <!-- css  -->
-    <link rel="stylesheet" href="style.css">
+		<!-- font awesome cdn -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 
-</head>
-<body>
-    <div class="container">
-        <!-- title  -->
-        <h3>Password Generator</h3>
+		<!-- css  -->
+		<link rel="stylesheet" href="style.css" />
 
-        <!-- password result display area  -->
-        <section>
-            <input type="text" name="text" id="passResult" placeholder="P4$5W0rD!">
-            <i class="fa-regular fa-copy"></i>
-        </section>
-        <!-- end of password result display area  -->
+		<!-- google font  -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,600;1,700;1,800&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<!-- title  -->
+			<div class="top">
+				<h3>Password Generator</h3>
+			</div>
 
-        <!-- bottom side -->
-        <section>
-            <!-- char lenght -->
-            <article class="lenght">
-                <div class="char-text">
-                    <h3>Character Length</h3>
-                </div>
-                <div class="len-number">
-                    <span>0</span>
-                </div>
-            </article>
-            <!-- ends of char lenght -->
-            <article class="rangebar">
-                <input type="range">
-            </article>
-            
-            <!--# ==================== checkbox ===================== -->
-            <article class="checboxes">
-                <ul>
-                    <li>
-                        <input type="checkbox" name="tick" id="upperCase">
-                        <label for="upperCase">Include Uppercase Letters</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="tick" id="lowerCase">
-                        <label for="upperCase">Include Lowercase Letters</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="tick" id="incNumbers">
-                        <label for="incNumbers">Include Numbers</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="tick" id="incSymbols">
-                        <label for="incSymbols">Include Symbols</label>
-                    </li>
-                </ul>
-            </article>
-            <!--# ================ ends of checkbox ================= -->
+			<!-- password result display area  -->
+			<section class="passDisplay">
+				
+                <span id="passResult">
+                    P4$5W0rD!
+                </span>
+				<i class="fa-regular fa-copy"></i>
+			</section>
+			<!-- end of password result display area  -->
 
-            <!--] ==================== strength ===================== -->
-            <article class="strength">
-                <div>
-                    <h5>STRENGTH</h5>
-                </div>
-                <div>
-                    <ul class="difBars">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </article>
-            <!--] ==================== ends of strength ===================== -->
-            
-            <!--| ==================== generate ===================== -->
-            <article class="generate">
-                <h3 id="generateBtn">GENERATE</h3>
-                <i class="fa-solid fa-arrow-right-to-bracket"></i>
-            </article>
-            <!--| ==================== ends of generate ===================== -->
+			<!-- bottom side -->
+			<section class="bottom">
+				<!-- char lenght -->
+				<article class="lenght">
+					<div class="char-text">
+						<h3>Character Length</h3>
+					</div>
+					<div class="len-number">
+						<span>0</span>
+					</div>
+				</article>
+				<!-- ends of char lenght -->
+				<article class="rangebar">
+					<input type="range" />
+				</article>
 
-        </section>
-        <!-- ends of bottom side -->
+				<!--# ==================== checkbox ===================== -->
+				<article class="checboxes">
+					<ul>
+						<li>
+							<input type="checkbox" name="tick" id="upperCase" />
+							<label for="upperCase"
+								>Include Uppercase Letters</label
+							>
+						</li>
+						<li>
+							<input type="checkbox" name="tick" id="lowerCase" />
+							<label for="upperCase"
+								>Include Lowercase Letters</label
+							>
+						</li>
+						<li>
+							<input
+								type="checkbox"
+								name="tick"
+								id="incNumbers"
+							/>
+							<label for="incNumbers">Include Numbers</label>
+						</li>
+						<li>
+							<input
+								type="checkbox"
+								name="tick"
+								id="incSymbols"
+							/>
+							<label for="incSymbols">Include Symbols</label>
+						</li>
+					</ul>
+				</article>
+				<!--# ================ ends of checkbox ================= -->
 
-    </div>
-</body>
+				<!--] ==================== strength ===================== -->
+				<article class="strength">
+					<div >
+						<h5>STRENGTH</h5>
+					</div>
+                    <div class="right">
+                        <div>
+                            <span id="difText">weak</span>
+                        </div>
+                        <div>
+                            <ul class="difBars">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+					
+				</article>
+				<!--] ==================== ends of strength ===================== -->
+
+				<!--| ==================== generate ===================== -->
+				<article class="generate">
+					<h3 id="generateBtn">GENERATE</h3>
+					<i class="fa-solid fa-arrow-right-to-bracket"></i>
+				</article>
+				<!--| ==================== ends of generate ===================== -->
+			</section>
+			<!-- ends of bottom side -->
+		</div>
+	</body>
 </html>

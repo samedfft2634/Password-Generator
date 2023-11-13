@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 body{
@@ -9,6 +10,98 @@ body{
 }
 
 .container{
-    background-color: #24232B;
     color: #fff;
+    width: 30rem;
+    margin: 10rem auto;
 }
+
+.container .top{
+    color: #807c92;
+    text-align: center;
+    padding: 1.5rem;
+    font-weight: 700;
+}
+.passDisplay {
+    background-color: #24232B;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+}
+
+
+/* ===================== bottom side ==================== */
+.bottom {
+    background-color: #24232B;
+    padding: 1.5rem;
+
+}
+.lenght{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.rangebar input{
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.checboxes{
+    margin-bottom: 1.5rem;
+}
+
+.checboxes ul {
+    list-style: none;
+    line-height: 2rem;
+}
+
+.strength{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #191820;
+    padding: 1rem 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.strength h5{
+    color: #807c92;
+}
+
+.strength .difBars{
+    display: flex;
+    gap: .5rem;
+    list-style: none;
+}
+
+.strength .right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+.strength .difBars li {
+    border: 1px solid #fff;
+    width: 10px;
+    height: 30px;
+}
+
+
+/* generate */
+.generate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #A3FFAE;
+    color: #000 ;
+    font-weight: 300;
+    padding: 1.2rem;
+}
+
+/* ===================== bottom side ==================== */
