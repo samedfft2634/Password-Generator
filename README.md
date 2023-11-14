@@ -14,7 +14,7 @@
   <p align="center">
     🔐 Create a strong password of your own choosing 🔒
     <br />
-    <a href="https://wallet-app-blush.vercel.app/"><strong>LIVE »</strong></a>
+    <a href="https://password-generator-kappa-olive.vercel.app/"><strong>LIVE »</strong></a>
     <br />
   </p>
 </div>
