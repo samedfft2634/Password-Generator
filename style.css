@@ -93,7 +93,7 @@ body{
 
 
 /* generate */
-.generate{
+#generateBtn{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,6 +102,12 @@ body{
     color: #000 ;
     font-weight: 300;
     padding: 1.2rem;
+    width: 100%;
+}
+#generateBtn:hover{
+    background-color: #000;
+    outline:  #A3FFAE;
+    color:  #A3FFAE;
 }
 
 /* ===================== bottom side ==================== */

@@ -41,7 +41,7 @@
                 <span id="passResult">
                     P4$5W0rD!
                 </span>
-				<i class="fa-regular fa-copy"></i>
+				<i class="fa-regular fa-copy" id="clipboard"></i>
 			</section>
 			<!-- end of password result display area  -->
 
@@ -53,12 +53,12 @@
 						<h3>Character Length</h3>
 					</div>
 					<div class="len-number">
-						<span>0</span>
+						<span id="rangeValue">0</span>
 					</div>
 				</article>
 				<!-- ends of char lenght -->
 				<article class="rangebar">
-					<input type="range" />
+					<input type="range" id="myRange" min="0" max="8" value="0"/>
 				</article>
 
 				<!--# ==================== checkbox ===================== -->
@@ -119,13 +119,15 @@
 				<!--] ==================== ends of strength ===================== -->
 
 				<!--| ==================== generate ===================== -->
-				<article class="generate">
-					<h3 id="generateBtn">GENERATE</h3>
+				<button type="button" id="generateBtn">
+					<h3 >GENERATE</h3>
 					<i class="fa-solid fa-arrow-right-to-bracket"></i>
-				</article>
+				</button>
 				<!--| ==================== ends of generate ===================== -->
 			</section>
 			<!-- ends of bottom side -->
 		</div>
+
+		<script src="script.js"></script>
 	</body>
 </html>
