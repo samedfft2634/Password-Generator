@@ -1,3 +1,8 @@
+:root {
+    --form-control-color: rebeccapurple;
+    --form-control-disabled: #959495;
+  }
+
 *{
     margin: 0;
     padding: 0;
@@ -61,6 +66,15 @@ body{
     line-height: 2rem;
 }
 
+.checkoxes li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    gap: 10px;
+
+}
+
 .strength{
     display: flex;
     justify-content: space-between;
@@ -115,6 +129,7 @@ body{
     border: 1px solid #A3FFAE;
     color:  #A3FFAE;
     transition: all .4s;
+    cursor: pointer;
 }
 
 /* ===================== bottom side ==================== */
@@ -127,4 +142,99 @@ body{
 #clipboard,#rangeValue{
     color: #A3FFAE;
 }
+#clipboard{
+    cursor: pointer;
+}
 
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 10px;
+    border: 2px solid #A3FFAE;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #000;
+    border-color: orange;
+}
+
+
+input[type="checkbox"]:checked::before {
+    content: '\2713'; 
+    font-size: 20px; 
+    color: orange; 
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Custom styling for input range */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #A3FFAE;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  
+  input[type="range"]:hover {
+    opacity: 1;
+  }
+  
+  /* Adjust the range thumb style */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background:  #A3FFAE;
+    border: 2px solid #000;
+    cursor: pointer;
+    margin-top: -8px;
+  }
+
+  input[type="range"]:hover::-webkit-slider-thumb{
+    background:  #000;
+    border: 2px solid #A3FFAE;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #000;
+    cursor: pointer;
+
+  }
+  
+  /* Adjust the range track style */
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1rem;
+    cursor: pointer;
+    background: linear-gradient(to right, #A3FFAE, red);
+    border-radius: 5px;
+    border: 1px solid #A3FFAE;
+  }
+  
+  input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: linear-gradient(to right, #A3FFAE, red);
+    border-radius: 5px;
+    border: 1px solid #A3FFAE;
+  }
+  
+  /* Adjust the range progress style (for WebKit browsers) */
+  input[type="range"]::-webkit-progress-value {
+    background: linear-gradient(to right, #A3FFAE, #000);
+  }

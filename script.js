@@ -16,18 +16,13 @@ const randomFunc = {
 	number: getRandomNumber,
 	symbol: getRandomSymbol,
 };
+
 // Random Values
-function getRandomLower() {
-	return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
+function getRandomLower() {return String.fromCharCode(Math.floor(Math.random() * 26) + 97);}
 
-function getRandomUpper() {
-	return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
+function getRandomUpper() {return String.fromCharCode(Math.floor(Math.random() * 26) + 65);}
 
-function getRandomNumber() {
-	return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
+function getRandomNumber() {return String.fromCharCode(Math.floor(Math.random() * 10) + 48);}
 
 function getRandomSymbol() {
 	const symbols = "!@#$%^&*(){}[]=<>/,.";
@@ -42,14 +37,7 @@ generateBtn.addEventListener("click", () => {
 	const hasUpper = upperCase.checked;
 	const hasNumber = includeNumber.checked;
 	const hasSymbol = includeSymbol.checked;
-	resultEl.innerText = generatePassword(
-		hasLower,
-		hasUpper,
-		hasNumber,
-		hasSymbol,
-		length
-	);
-	
+	resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol,	length);
 });
 
 //Copy Password to clipboard
@@ -77,17 +65,6 @@ function generatePassword(lower, upper, number, symbol, length) {
 		(type) => Object.values(type)[0]
 	);
 
-	// if (typesCount === 0) {
-	// 	return "Verify a condition !";
-	// }
-
-	// variables for styling
-	const liFirst = document.getElementById("liFirst")
-	const liSecond = document.getElementById("liSecond")
-	const liThird = document.getElementById("liThird")
-	const liFourth = document.getElementById("liFourth")
-	const difText = document.getElementById("difText")
-	//
 	if (typesCount === 0) {
 		clipboardEl.style.display = "none"
 		resultEl.innerText = "Verify a condition!";
@@ -98,25 +75,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 		}, 1000);
 		
 		return resultEl.textContent;
-	} else if ( length <= 5){
-		liFirst.style.backgroundColor = "lightgreen"
-		difText.textContent = "Too Weak"
-	}else if ((5 < length && length <= 10) ){
-		liFirst.style.backgroundColor = "lightgreen"
-		liSecond.style.backgroundColor = "green"	
-		difText.textContent = "EASY"
-	}else if ((10 < length && length <= 15)){
-		liFirst.style.backgroundColor = "lightgreen"
-		liSecond.style.backgroundColor = "green"
-		liThird.style.backgroundColor = "tomato"	
-		difText.textContent = "MEDIUM"
-	} else if ( (15 < length && length <= 20)){
-		liFirst.style.backgroundColor = "lightgreen"
-		liSecond.style.backgroundColor = "green"
-		liThird.style.backgroundColor = "tomato"	
-		liFourth.style.backgroundColor = "red"		
-		difText.textContent = "HARD"
-	}
+	} 
 
 	for (let i = 0; i < length; i += typesCount) {
 		typesArr.forEach((key) => {
@@ -132,6 +91,38 @@ function updateRange() {
 	var range = myRange;
 	var value = range.value;
 	rangeValue.innerText = value;
+
+	const liFirst = document.getElementById("liFirst");
+    const liSecond = document.getElementById("liSecond");
+    const liThird = document.getElementById("liThird");
+    const liFourth = document.getElementById("liFourth");
+    const difText = document.getElementById("difText");
+
+	if (value <= 5) {
+        liFirst.style.backgroundColor = "lightgreen";
+        liSecond.style.backgroundColor = "";
+        liThird.style.backgroundColor = "";
+        liFourth.style.backgroundColor = "";
+        difText.textContent = "Too Weak!";
+    } else if (5 < value && value <= 10) {
+        liFirst.style.backgroundColor = "lightgreen";
+        liSecond.style.backgroundColor = "green";
+        liThird.style.backgroundColor = "";
+        liFourth.style.backgroundColor = "";
+        difText.textContent = "EASY";
+    } else if (10 < value && value <= 15) {
+        liFirst.style.backgroundColor = "lightgreen";
+        liSecond.style.backgroundColor = "green";
+        liThird.style.backgroundColor = "tomato";
+        liFourth.style.backgroundColor = "";
+        difText.textContent = "MEDIUM";
+    } else if (15 < value && value <= 20) {
+        liFirst.style.backgroundColor = "lightgreen";
+        liSecond.style.backgroundColor = "green";
+        liThird.style.backgroundColor = "tomato";
+        liFourth.style.backgroundColor = "red";
+        difText.textContent = "HARD!";
+    }
 }
 myRange.addEventListener("input", updateRange);
 
@@ -151,3 +142,4 @@ function notfy() {
 		},
 	});
 }
+
