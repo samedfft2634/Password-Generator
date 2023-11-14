@@ -51,17 +51,17 @@ Do you need strong password ? And if you do not have an idea about it, why would
 
 ## Squares
 
-<img src="https://github.com/samedfft2634/Password-Generator/assets/100915606/25a88cc0-7e43-4086-a5f5-a01a42db87c5" align="left" width="32%">
-<img src="https://github.com/samedfft2634/Password-Generator/assets/100915606/3765e2b0-2a4d-4d4e-bbd9-c00fd0b623b9" align="right" width="32%">
-<img src="https://github.com/samedfft2634/Password-Generator/assets/100915606/9bb22852-ebac-4748-bdc1-0c710e2ad1a2" align="center" width="32%" >
+<img src="https://github.com/samedfft2634/Password-Generator/assets/100915606/25a88cc0-7e43-4086-a5f5-a01a42db87c5" align="left" width="30%">
+<img src="https://github.com/samedfft2634/Password-Generator/assets/100915606/3765e2b0-2a4d-4d4e-bbd9-c00fd0b623b9" align="right" width="30%">
+<img src="https://github.com/samedfft2634/Password-Generator/assets/100915606/9bb22852-ebac-4748-bdc1-0c710e2ad1a2" align="center" width="30%" >
 <br>
 <br><br>
 
 ## Responsive Designs 📲💻
 <!-- Responsive Designs -->
 <div align="center" id="responsive" width="100%">
-    <img src="https://github.com/samedfft2634/Password-Generator/assets/100915606/2418c3c3-0cde-4b45-a6a1-13028c341f0f" width="48%" align="left" alt="mobile"><br>
-    <img src="https://github.com/samedfft2634/Password-Generator/assets/100915606/8cc1944b-4c06-446a-8ca6-b82bcc6beae5" width="48%" align="right" alt="mobile"><br>
+    <img src="https://github.com/samedfft2634/Password-Generator/assets/100915606/2418c3c3-0cde-4b45-a6a1-13028c341f0f" width="40%" align="left" alt="mobile"><br>
+    <img src="https://github.com/samedfft2634/Password-Generator/assets/100915606/8cc1944b-4c06-446a-8ca6-b82bcc6beae5" width="40%" align="right" alt="mobile"><br>
 </div>
 
 
