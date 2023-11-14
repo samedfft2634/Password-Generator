@@ -109,27 +109,35 @@ function updateRange() {
         liThird.style.backgroundColor = "";
         liFourth.style.backgroundColor = "";
         difText.textContent = "Too Weak!";
+        difText.style.color = "lightgreen";
     } else if (5 < value && value <= 10) {
         liFirst.style.backgroundColor = "lightgreen";
         liSecond.style.backgroundColor = "green";
         liThird.style.backgroundColor = "";
         liFourth.style.backgroundColor = "";
         difText.textContent = "EASY";
+        difText.style.color = "green";
     } else if (10 < value && value <= 15) {
         liFirst.style.backgroundColor = "lightgreen";
         liSecond.style.backgroundColor = "green";
         liThird.style.backgroundColor = "tomato";
         liFourth.style.backgroundColor = "";
         difText.textContent = "MEDIUM";
+        difText.style.color = "tomato";
     } else if (15 < value && value <= 20) {
         liFirst.style.backgroundColor = "lightgreen";
         liSecond.style.backgroundColor = "green";
         liThird.style.backgroundColor = "tomato";
         liFourth.style.backgroundColor = "red";
         difText.textContent = "HARD!";
+        difText.style.color = "red";
+        
     }
 }
-myRange.addEventListener("input", updateRange);
+myRange.addEventListener("input", ()=>{
+    updateRange();
+    generateBtn.click()   
+});
 
 window.addEventListener("load", () => {
 	updateRange();
