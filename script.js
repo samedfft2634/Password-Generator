@@ -16,51 +16,6 @@ const randomFunc = {
 	number: getRandomNumber,
 	symbol: getRandomSymbol,
 };
-
-//Generate event listen
-generateBtn.addEventListener("click", () => {
-	const length = +myRange.value;
-	const hasLower = lowerCase.checked;
-	const hasUpper = upperCase.checked;
-	const hasNumber = includeNumber.checked;
-	const hasSymbol = includeSymbol.checked;
-	resultEl.innerText = generatePassword(
-		hasLower,
-		hasUpper,
-		hasNumber,
-		hasSymbol,
-		length
-	);
-});
-
-//Generate password function
-function generatePassword(lower, upper, number, symbol, length) {
-	// 1. Init pw var
-	// 2. Filter out unchecked types
-	// 3. Loop over length call generator function for each type
-	// 4. Add final pw to the pw var and return
-
-	let generatedPassword = "";
-	const typesCount = lower + upper + number + symbol;
-	// console.log('typesCount',typesCount)
-	const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(
-		(type) => Object.values(type)[0]
-	);
-	// console.log('typesArr: ',typesArr)
-
-	if (typesCount === 0) {
-		return "";
-	}
-
-	for (let i = 0; i < length; i += typesCount) {
-		typesArr.forEach((type) => {
-			const funcName = Object.keys(type)[0];
-			generatedPassword += randomFunc[funcName]();
-		});
-	}
-	console.log(generatedPassword);
-}
-
 // Random Values
 function getRandomLower() {
 	return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
@@ -79,10 +34,120 @@ function getRandomSymbol() {
 	return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
+//Generate event listen
+generateBtn.addEventListener("click", () => {
+	clipboardEl.style.display = "block"
+	const length = +myRange.value;
+	const hasLower = lowerCase.checked;
+	const hasUpper = upperCase.checked;
+	const hasNumber = includeNumber.checked;
+	const hasSymbol = includeSymbol.checked;
+	resultEl.innerText = generatePassword(
+		hasLower,
+		hasUpper,
+		hasNumber,
+		hasSymbol,
+		length
+	);
+	
+});
+
+//Copy Password to clipboard
+clipboardEl.addEventListener("click", () => {
+	const textarea = document.createElement("textarea");
+	const password = resultEl.innerText;
+	if (!password) {
+		return;
+	}
+
+	textarea.value = password;
+	document.body.appendChild(textarea);
+	textarea.select();
+	document.execCommand("copy");
+	textarea.remove();
+	notfy()
+});
+
+//Generate password function
+function generatePassword(lower, upper, number, symbol, length) {
+	let generatedPassword = "";
+	const typesCount = lower + upper + number + symbol;
+	// console.log('typesCount',typesCount)
+	const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(
+		(type) => Object.values(type)[0]
+	);
+
+	// if (typesCount === 0) {
+	// 	return "Verify a condition !";
+	// }
+
+	// variables for styling
+	const liFirst = document.getElementById("liFirst")
+	const liSecond = document.getElementById("liSecond")
+	const liThird = document.getElementById("liThird")
+	const liFourth = document.getElementById("liFourth")
+	const difText = document.getElementById("difText")
+	//
+	if (typesCount === 0) {
+		clipboardEl.style.display = "none"
+		resultEl.innerText = "Verify a condition!";
+		resultEl.style.color = "red";
+		setTimeout(() => {
+			resultEl.innerText = "P4$5W0rD!";
+			resultEl.style.color = "orange";
+		}, 1000);
+		
+		return resultEl.textContent;
+	} else if ( length <= 5){
+		liFirst.style.backgroundColor = "lightgreen"
+		difText.textContent = "Too Weak"
+	}else if ((5 < length && length <= 10) ){
+		liFirst.style.backgroundColor = "lightgreen"
+		liSecond.style.backgroundColor = "green"	
+		difText.textContent = "EASY"
+	}else if ((10 < length && length <= 15)){
+		liFirst.style.backgroundColor = "lightgreen"
+		liSecond.style.backgroundColor = "green"
+		liThird.style.backgroundColor = "tomato"	
+		difText.textContent = "MEDIUM"
+	} else if ( (15 < length && length <= 20)){
+		liFirst.style.backgroundColor = "lightgreen"
+		liSecond.style.backgroundColor = "green"
+		liThird.style.backgroundColor = "tomato"	
+		liFourth.style.backgroundColor = "red"		
+		difText.textContent = "HARD"
+	}
+
+	for (let i = 0; i < length; i += typesCount) {
+		typesArr.forEach((key) => {
+			const funcName = Object.keys(key)[0];
+			generatedPassword += randomFunc[funcName]();
+		});
+	}
+	const finalPass = generatedPassword.slice(0, length);
+	return finalPass ? finalPass : "Please choose password length.";
+}
+
 function updateRange() {
 	var range = myRange;
 	var value = range.value;
 	rangeValue.innerText = value;
-	console.log(value);
 }
 myRange.addEventListener("input", updateRange);
+
+window.addEventListener("load", () => {
+	updateRange();
+});
+
+//notfy alert
+function notfy() {
+	const notyf = new Notyf();
+	notyf.success({
+		message: "Copied!",
+		duration: 1000,	
+		position: {
+			x: "center",
+			y: "top",
+		},
+	});
+}

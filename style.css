@@ -12,7 +12,7 @@ body{
 .container{
     color: #fff;
     width: 30rem;
-    margin: 10rem auto;
+    margin: 1rem auto;
 }
 
 .container .top{
@@ -28,6 +28,9 @@ body{
     display: flex;
     justify-content: space-between;
     font-size: 2rem;
+}
+#passResult{
+    color: orange;
 }
 
 
@@ -68,7 +71,7 @@ body{
 }
 
 .strength h5{
-    color: #807c92;
+    color: #A3FFAE;
 }
 
 .strength .difBars{
@@ -103,11 +106,25 @@ body{
     font-weight: 300;
     padding: 1.2rem;
     width: 100%;
+    border: 1px solid  #000;
+    outline: none;
+    transition: all .4s;
 }
 #generateBtn:hover{
     background-color: #000;
-    outline:  #A3FFAE;
+    border: 1px solid #A3FFAE;
     color:  #A3FFAE;
+    transition: all .4s;
 }
 
 /* ===================== bottom side ==================== */
+
+
+.char-text h3{
+    color:orange;
+}
+
+#clipboard,#rangeValue{
+    color: #A3FFAE;
+}
+
