@@ -17,6 +17,12 @@ const randomFunc = {
 	symbol: getRandomSymbol,
 };
 
+function getRandomCharacter(types) {
+    const randomIndex = Math.floor(Math.random() * types.length);
+    const funcName = types[randomIndex];
+    return randomFunc[funcName]();
+}
+
 // Random Values
 function getRandomLower() {return String.fromCharCode(Math.floor(Math.random() * 26) + 97);}
 
@@ -58,33 +64,32 @@ clipboardEl.addEventListener("click", () => {
 
 //Generate password function
 function generatePassword(lower, upper, number, symbol, length) {
-	let generatedPassword = "";
-	const typesCount = lower + upper + number + symbol;
-	// console.log('typesCount',typesCount)
-	const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(
-		(type) => Object.values(type)[0]
-	);
+    let generatedPassword = "";
 
-	if (typesCount === 0) {
-		clipboardEl.style.display = "none"
-		resultEl.innerText = "Verify a condition!";
-		resultEl.style.color = "red";
-		setTimeout(() => {
-			resultEl.innerText = "P4$5W0rD!";
-			resultEl.style.color = "orange";
-		}, 1000);
-		
-		return resultEl.textContent;
-	} 
+    const typesArr = [];
+    if (lower) typesArr.push('lower');
+    if (upper) typesArr.push('upper');
+    if (number) typesArr.push('number');
+    if (symbol) typesArr.push('symbol');
 
-	for (let i = 0; i < length; i += typesCount) {
-		typesArr.forEach((key) => {
-			const funcName = Object.keys(key)[0];
-			generatedPassword += randomFunc[funcName]();
-		});
-	}
-	const finalPass = generatedPassword.slice(0, length);
-	return finalPass ? finalPass : "Please choose password length.";
+    if (typesArr.length === 0) {
+        clipboardEl.style.display = "none";
+        resultEl.innerText = "Verify a condition!";
+        resultEl.style.color = "red";
+        setTimeout(() => {
+            resultEl.innerText = "P4$5W0rD!";
+            resultEl.style.color = "orange";
+        }, 1000);
+
+        return resultEl.textContent;
+    }
+
+    for (let i = 0; i < length; i++) {
+        generatedPassword += getRandomCharacter(typesArr);
+    }
+
+    const finalPass = generatedPassword.slice(0, length);
+    return finalPass ? finalPass : "Please choose password length.";
 }
 
 function updateRange() {

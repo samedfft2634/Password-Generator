@@ -117,8 +117,8 @@ body {
 	color: #a3ffae;
 	transition: all 0.4s;
 	cursor: pointer;
-    box-shadow: 1px 1px 10px white;
-    letter-spacing: 1rem;
+	box-shadow: 1px 1px 10px white;
+	letter-spacing: 1rem;
 }
 
 /* ===================== bottom side ==================== */
@@ -143,7 +143,7 @@ input[type="checkbox"] {
 	border: 2px solid #a3ffae;
 	cursor: pointer;
 	position: relative;
-    top: .3rem;
+	top: 0.3rem;
 }
 
 input[type="checkbox"]:checked {
@@ -221,3 +221,5 @@ input[type="range"]::-moz-range-track {
 input[type="range"]::-webkit-progress-value {
 	background: linear-gradient(to right, #a3ffae, #000);
 }
+
+/* wıdth 22 rem responsıve mobıl ekran  */
