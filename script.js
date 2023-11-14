@@ -137,7 +137,7 @@ function updateRange() {
 myRange.addEventListener("input", ()=>{
     updateRange();
     generateBtn.click()   
-    vibrate()
+    // vibrate()
 });
 
 window.addEventListener("load", () => {
@@ -157,11 +157,11 @@ function notfy() {
 	});
 }
 
-function vibrate() {
-    if (!("vibrate" in navigator)) {
-      alert("Vibrate not supported!");
-      return;
-    }
-    navigator.vibrate(10);
-  }
+// function vibrate() {
+//     if (!("vibrate" in navigator)) {
+//       alert("Vibrate not supported!");
+//       return;
+//     }
+//     navigator.vibrate(10);
+//   }
   
